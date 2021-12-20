@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<div class="navbar navbar-dark shadow-sm">
+    <div class="navbar-brand align-item-center d-flex">
+        <div class="form-group">
+            <button class="btn btn-danger m-2" routerLink="/home" (click)="loginService.logoutUser()">Logout</button>
+            <input type="text" class="form-control custom-searchbar" placeholder="Start typing to search" [(ngModel)]="searchText" (keyup)="filter()">
+            <!-- <span class="fas fa-search search-icon" style="color:black"></span> -->
+        </div>
+    </div>
+    <button class="btn btn-outline-primary" routerLink="/products/cart">
+        <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+        <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+    </button>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <ng-container *ngFor="let item of productListDB | filter: searchText">
+            <div class="card col-md-3">
+                <img src="{{item.imageUrl}}" alt="IMAGE_DB_ERROR" data-bs-toggle="modal" data-bs-target="#modal-backdrop-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <!--MODAL STARTS-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img [src]="item.imageUrl" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!--MODAL ENDS-->
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;">{{item.title}}</h5>
+                <p style="white-space:nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 40ch;">{{item.description}}</p>
+                <p><strong>Price:</strong>&#8377;{{item.price}}</p>
+                <button class="btn custom-btn btn-outline-primary"(click)="addtocart(item)">Add to Cart</button>
+            </div>
+            <!--CARD ENDS-->
+        </ng-container>
+    </div>
+</div>
+<!--MODAL-->
+<!-- Button trigger modal -->
+  <!-- Modal -->
+  

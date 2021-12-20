@@ -1,0 +1,39 @@
+<div class="bg-contact100"> 
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <div class="contact100-pic js-tilt" data-tilt>
+                <img src="../../assets/images/img-round.png" alt="IMG">
+            </div>
+            <form class="contact100-form" [formGroup]="contactForm">
+                <span class="contact100-form-title">
+                    <h2>Get in touch</h2>
+                </span>
+                <div class="wrap-input100">
+                    <input class="input100" type="text" id="name" placeholder="Name" formControlName="name">
+                    <span *ngIf="name && name.invalid && name.touched" style="color:red; margin-left:40px">*Required</span>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="text" placeholder="Email" formControlName="email" (blur)="checkEmail()">
+                    <span *ngIf="email && email.invalid && email.touched" style="color:red; margin-left:40px">*Required</span>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100">
+                    <textarea class="input100" placeholder="Message" formControlName="textarea"></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <button class=" btn btn-dark contact100-form-btn"[disabled]="contactForm.invalid" (click)="postData()">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

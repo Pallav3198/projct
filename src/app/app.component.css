@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400&family=Praise&family=Roboto:wght@100&display=swap');
+.main_container{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    letter-spacing: 1px;
+}
+.custom-container{
+    background-color: antiquewhite;
+    border-bottom: 3px solid red;
+}
+.navbar-light{
+    height: 90px;
+    font-size: larger;
+    padding: 20px;  
+}
+.navbar-brand{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-family: 'Noto Serif Display', serif;
+    color: #ff3d4a;
+}
+#btn-custom{
+    margin-right: 12px;
+    margin-left: 12px;
+}
+#btn-custom2{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+#sign{
+    display:flex;
+    flex-direction: row-reverse;
+}
+.nav-link{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+.social{
+    padding:0;
+    margin:0;
+    width:100%; 
+}
+.fab{
+    width:20%;
+    color: green;
+    font-size: 40px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}

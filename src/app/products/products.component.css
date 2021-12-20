@@ -1,0 +1,20 @@
+.btn-info{
+    margin: 4px;
+    padding: 8px;
+    background-color: rgba(99, 159, 255,0.7);
+    border:none;
+}
+.btn-info:hover{
+    background-color: rgba(99, 159, 255,0.4);
+}
+.tr-details{
+    text-align: center;
+}
+#btn-edit{
+    margin-right: 4px;
+}
+.logout_section{
+    display:flex;
+    flex-direction: row-reverse;
+    margin-bottom: 2px;
+}

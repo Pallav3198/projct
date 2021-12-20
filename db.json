@@ -1,0 +1,91 @@
+{
+  "posts": [
+    {
+      "username": "Pallav Kumar",
+      "email": "pallav3198@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 2
+    },
+    {
+      "username": "sample user",
+      "email": "sample@sample.com",
+      "password": "samplepassword",
+      "id": 3
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "username": "Pallav Kumar",
+      "email": "Pallav3198@gmail.com",
+      "password": "Nokiaasha230!",
+      "id": 5
+    },
+    {
+      "username": "Madhuri",
+      "email": "madhuri@gmail.com",
+      "password": "123456",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "productName": "Krishna Kumar",
+      "productType": "Premium",
+      "sellerName": "kkumar@gmail.com",
+      "sellerPhone": "8787345678",
+      "id": 3
+    },
+    {
+      "productName": "Sai Manikant ",
+      "productType": "Standard",
+      "sellerName": "manikant@gmail.com",
+      "sellerPhone": "9876567654",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "productName": "Dhanashri Surpure",
+      "productType": "Standard",
+      "sellerName": "dhanshri.surpure@gmail.com",
+      "sellerPhone": "8765678980"
+    },
+    {
+      "id": 6,
+      "productName": "Keshav Goyal",
+      "productType": "Gold",
+      "sellerName": "keshav.goyal@gmail.com",
+      "sellerPhone": "6756471254"
+    },
+    {
+      "productName": "Madhuri Vakkala",
+      "productType": "Standard",
+      "sellerName": "madhuri.v@gmail.com",
+      "sellerPhone": "0009876545",
+      "id": 7
+    },
+    {
+      "productName": "Nikhil Khandelwal",
+      "productType": "Gold",
+      "sellerName": "nikhil@xyz.com",
+      "sellerPhone": "7670987634",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "productName": "Charan Kumar",
+      "productType": "Standard",
+      "sellerName": "charan.kumar@gmail.com",
+      "sellerPhone": "9891097632"
+    }
+  ]
+}

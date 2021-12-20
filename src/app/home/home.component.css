@@ -1,0 +1,66 @@
+.carousel{
+    width:100%;
+    height: 50%;
+    border-bottom:1px solid  #ff2655;
+}
+.card{
+    padding:0;
+    margin:0;
+}
+.card,.card img{
+    border:none;
+    transition: 0.6s ease-in-out;
+}
+.card:hover,.card img:hover{
+    border:none;
+    transition: 0.6s ease-in-out;
+    transform: scale(1.1);
+}
+.card-container{
+    padding:0;
+    margin:0px;
+    border: 1px solid #ff2655;
+}
+.d-block{
+    height:00px;
+}
+.carousal-title{
+    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+    font-family: 'cursive';
+    color:red;
+    font-size:100px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 2px red;
+    padding-top:20px;
+    margin-bottom: 250px;
+    width:100%;
+}
+.carousal-body{
+    font-size:40px;
+    color:white;
+    font-weight:bold;
+    margin-bottom: 100px;
+    background-color:  rgba(0,0,0,0.2)
+}
+/* TYPING EFFECT*/
+.typing-demo {
+    width: 46ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    /* font-size: 2em; */
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }

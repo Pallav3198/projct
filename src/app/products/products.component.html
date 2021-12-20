@@ -1,0 +1,70 @@
+<div class="container">
+  <section class="logout_section">
+    <!-- <button class="btn btn-danger m-2" routerLink="/home">Logout</button> -->
+  </section>
+    <section class="mt-4 search-section">
+        <input type="text"class="form-control" [(ngModel)]="searchText" placeholder="Start typing to search">
+    </section>
+    <button (click)="clickAddProduct()"class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" id="modal">Add New User</button>
+    <section class="table-section mt-4">
+        <table class="table table-responsive">
+            <thead class="thead-dark">
+              <tr style="text-align: center;">
+                <!-- <th scope="col">Product ID</th> -->
+                <th scope="col">User Name</th>
+                <th scope="col">User Type</th>
+                <th scope="col">User Email </th>
+                <th scope="col">User Phone</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let product of getData|filter:searchText">
+                <!--Product Details goes here-->
+                <tr class="tr-details">
+                   <!-- <td><button class="btn btn-success">{{product.id}}</button></td> -->
+                    <strong><td>{{product.productName}}</td></strong>
+                    <td>{{product.productType}}</td>
+                    <td>{{product.sellerName}}</td>
+                    <td>{{product.sellerPhone}}</td>
+                    <td>
+                      <button class="btn btn-warning" id="btn-edit" (click)="editProduct(product)" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</button>
+                      <button class="btn btn-danger" id="btn-delete" (click)="deleteProduct(product)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </section>
+</div>
+<!--UNDER DEVELOPMENT-->
+<!--MODAL-->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add New Product</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form"[formGroup]="formValue">
+          <!-- <label for="Product ID">Product ID</label>
+          <input type="text" placeholder="Enter Product ID" class="form-control mb-2" formControlName="id"> -->
+          <label for="Product Name">User Name</label>
+          <input type="text"  placeholder="Enter Product Name" class="form-control mb-2" formControlName="productName">
+          <label for="Product Type">User Type</label>
+          <input type="text" placeholder="Enter Product Type" class="form-control mb-2" formControlName="productType">
+          <label for="Seller Name">User Email</label>
+          <input type="seller name" placeholder="Enter Seller Name" class="form-control mb-2" formControlName="sellerName">
+          <label for="Seller Phone">User Phone Number</label>
+          <input type="tel" placeholder="Enter Seller Phone" class="form-control mb-2" formControlName="sellerPhone">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd"class="btn btn-primary" data-bs-dismiss="modal" (click)="postProduct()">Add Product</button>
+        <button type="button" *ngIf="showUpdate"class="btn btn-primary" data-bs-dismiss="modal" (click)="updateProduct()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

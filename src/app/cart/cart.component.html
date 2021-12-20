@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<ng-container *ngIf="products.length !=0">
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive table-light">
+                <thead>
+                    <tr style="text-align:center">
+                        <th>Sr.No</th>
+                        <th>Product Name</th>
+                        <th>Product Image</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="align">
+                    <tr *ngFor="let item of products; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td><img style="width: 120px;" src="{{item.imageUrl}}" alt=""></td>
+                        <td style="width: 12%;">&#8377; {{item.price}}</td>
+                        <td>
+                            <button (click)="removeItem(item)" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"placeholder="Have Coupon Code? Enter Here" class="form-control coupon" #coupon_input></td>
+                        <td><button class="btn btn-outline-primary" (click)="couponFn(coupon_input.value)">Submit</button></td>
+                        <td><button class="btn btn-outline-danger" (click)="emptycart()">Empty Cart</button></td>
+                        <td style="text-align: end;"><strong>Grand Total : 	&#8377;{{products.grandTotal}}</strong></td>
+                        <td><button class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Checkout</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- <form class="form">
+    <input type="text" placeholder="Enter Coupon Code" class="form-control">
+    <button class="btn btn-outline-dark form-control mt-2">Submit</button> -->
+<!-- </form> -->
+</ng-container>
+<ng-container *ngIf="products.length ==0">
+<div class="container">
+    <div class="card">
+        <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+        <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <button routerLink="/products" class="btn btn-warning">Shop Now</button>
+    </div>
+</div>
+</ng-container>
+<!--POST CHECKOUT-->
+<div class="offcanvas offcanvas-end delivery_class" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Delivery Details</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <form class="form" [formGroup]="deliveryForm">
+          <label for="name" class="form-label">Enter Your Name</label>
+          <input type="text" placeholder="Enter Your Name" class="form-control custom_form_control" formControlName="name">
+          <label for="Email"class="form-label">Enter Email Address</label>
+          <input type="text" placeholder="abc@example.com" class="form-control custom_form_control" formControlName="email">
+          <hr>
+          <label for="address" class="form-label">Enter Address</label>
+          <textarea class="form-control custom_form_control"></textarea>
+          <label for="" class="form-label">Pincode</label>
+          <input type="number" name="" id="" placeholder="Enter Pincode"class="form-control custom_form_control">
+          <label for="" class="form-label custom_form_control">City</label>
+          <select class="form-select custom_form_control">
+              <option value="New Delhi">New Delhi</option>
+              <option value="New Delhi">Mumbai</option>
+              <option value="New Delhi">Bangalore</option>
+              <option value="New Delhi">Hyderabad</option>
+              <option value="New Delhi">Chennai</option>
+          </select>
+      </form>
+      <hr>
+      <button class="btn btn-outline-success form-control" id="liveToastBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="sendMail()">Proceed to Payment</button>
+      <br>
+      <button class="btn btn-outline-primary form-control mt-2" routerLink="/products">Shop More</button>
+    
+  </div>
+</div>
+<!--PAYMENT MODAL-->
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">MTX Payments</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Enter Email to send Receipt (Optional)</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email" class="form-control">
+                    <h4 class="payment-total">Total Amount &#8377;{{products.grandTotal}}</h4>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel Payment</button>
+          <button type="button" class="btn btn-outline-success" (click)="sendPayment()" data-bs-dismiss="modal" routerLink="/products">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>

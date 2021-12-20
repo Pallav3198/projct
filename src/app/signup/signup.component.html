@@ -1,0 +1,66 @@
+	<div class="container-fluid" style="background-color: antiquewhite;">
+		<div class="container">
+		  <div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-xl-10 mt-2 custom-container">
+			  <div class="card rounded-3 text-black">
+				<div class="row g-0">
+				  <div class="col-lg-6">
+					<div class="card-body p-md-5 mx-md-4">
+	  
+					  <div class="text-center">
+						<img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/lotus.png" style="width: 185px;" alt="logo">
+						<h4 class="mt-1 mb-5 pb-1">MTX Shoppe</h4>
+					  </div>
+	  
+					  <form [formGroup]="signupform">
+						<h4 class="text-center">Create a new account</h4>
+						<div class="form-outline mb-4 text-center">
+							<input type="email" class="form-control" formControlName="email" placeholder="example@abc.com"/>
+							<label class="form-label" for="form2Example11">Email</label>
+							<br>
+							<span *ngIf="email && email.invalid && email.touched">*Check Field Input</span>
+						  </div>
+		
+						<div class="form-outline mb-4 text-center">
+						  <input type="text" class="form-control" formControlName="username"placeholder="Enter Username"/>
+						  <label class="form-label" for="form2Example11">Username</label>
+						  <br>
+						  <span *ngIf="username && username.invalid && username.touched">*Check Field Input</span>
+						</div>
+						<div class="form-outline mb-4 text-center">
+						  <input type="password" formControlName="password" class="form-control" />
+						  <label class="form-label" for="form2Example22">Password</label>
+						  <br>
+						  <span *ngIf="password && password.invalid && password.touched">*Check Field Input</span>
+						</div>
+	  
+						<div class="text-center pt-1 mb-5 pb-1">
+						  <button class="btn btn-info btn-block fa-lg mb-3" type="button" value="submit" (click)="signup()" [disabled]="signupform.invalid">Sign Up</button>
+						</div>
+						<div class="d-flex align-items-center justify-content-center pb-4">
+						  <p class="mb-0 me-2">Already a User?</p>
+						  <button type="button" class="btn btn-outline-danger" routerLink = "/login">Sign In</button>
+						</div>
+
+						<div class="d-flex align-items-center justify-content-center pb-4">
+							<p class="mb-0 me-2">Forgot Password?</p>
+							<button type="button" class="btn btn-outline-dark" routerLink="/forgotpassword">Reset Password </button>
+						</div>
+
+					  </form>
+					</div>
+				  </div> 
+				  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+					<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+					  <h2 class="mb-4">Our Expertise</h2>
+					  <p>
+						We specialise in the finest quality jewellery repairs, remodelling and custom designs, and offer a one-on-one, personalised design service with quality workmanship and attention to detail. Experience a seamless and educational journey to creating the perfect engagement ring by remaining involved in the process from start to finish. Our gemstone collection includes an exclusive range of loose diamonds available from all around the world, including GIA Certified, Australian Argyle and Antwerp Diamonds.
+					  </p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>

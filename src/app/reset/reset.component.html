@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <form class="form" [formGroup]="resetForm">
+
+        <label for="password" class="form-label text-center">
+            <h4 class="text-center">Enter Email</h4>
+        </label>
+        <input type="email" placeholder="Enter Email" class="form-control text-center alert-info" formControlName="email">
+        
+        <label for="password" class="form-label text-center">
+            <h4 class="text-center mt-4">Enter New Password</h4>
+        </label>
+        <input type="password" placeholder="Enter Password" class="form-control text-center alert-info" formControlName="password">
+        <label for="password" class="form-label">
+            <h4 class="text-center mt-4">Confirm Password</h4>
+        </label>
+        <input type="password" placeholder="Confirm Password" class="form-control text-center alert-info" formControlName="conf_password">
+        <button class="btn btn-outline-success form-control mt-4" (click)="passwordReset()">Submit</button>
+    </form>
+</div>
+
+

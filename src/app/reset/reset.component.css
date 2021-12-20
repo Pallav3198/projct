@@ -1,0 +1,25 @@
+.container-fluid{
+    margin-top:5%;
+    padding:0;
+    margin-bottom: 8%;
+}
+.form{
+    width:50%;
+    align-items: center;
+    justify-content: center;
+    margin-left:25%;
+    margin-top: 12px;
+    border: 10px solid #68caed;
+    border-radius: 8px;
+    margin-right:20%;
+    padding:5%;
+    margin-bottom: 12px;
+    min-height: 400px;
+}
+
+.btn-outline-success{
+    font-size: larger;
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+}
